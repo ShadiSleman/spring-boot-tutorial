@@ -1,0 +1,66 @@
+#we copy the application.properties file to converter
+#here we don't have duplicate data ,and it's mote readable .
+
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: prod
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: password
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+---
+
+spring:
+  profiles: qa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: password
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer!!
+
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: password
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Daily Code Buffer , Hello world !!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Adding all endpoints in actuator
+        exclude: "env,beans" # excluding endpoints in actuator
+
+---
