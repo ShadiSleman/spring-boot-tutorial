@@ -35,9 +35,9 @@ class DepartmentRepositoryTest {
 
     }
 
-    @Test
-    public void whenFindByID_ThenReturnDepartment(){
-        Department department = departmentRepository.findById(1L).get();
-        assertEquals(department.getDepartmentName(),"Shadi");
-    }
+//    @Test
+//    public void whenFindByID_ThenReturnDepartment(){
+//        Department department = departmentRepository.findById(1L).get();
+//        assertEquals(department.getDepartmentName(),"Shadi");
+//    }
 }
