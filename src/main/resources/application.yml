@@ -63,4 +63,8 @@ management:
         include: "*"  # Adding all endpoints in actuator
         exclude: "env,beans" # excluding endpoints in actuator
 
+
+sites:
+    - id: default
+      url: https://updates.jenkins.io/update-center.json
 ---
